@@ -18,7 +18,7 @@ class Game:
 
     def move(self, action):
         # 0 = up, 1 = right, 2 = down, 3 = left
-        # doesn't check if action is valid
+        # /!\ doesn't check if action is valid
         # choses move according to probabilities given
         has_moved = False
         if (self.robot_pos[0] == 0) or (self.robot_pos[0] == self.size[0] - 1) or (self.robot_pos[1] == 0) or (self.robot_pos[1] == self.size[1] - 1):
@@ -115,5 +115,15 @@ class Game:
         print(debug_map)
     
 
-
-g = Game((5,5), (0,0), (4,4), 10, [(1,1), (2,2)], -5, [(3,3)], 5)
+if __name__ == "__main__":  
+    g = Game((5,5), (0,0), (4,4), 10, [(1,1), (2,2)], -5, [(3,3)], 5)
+    print(g.map)
+    g.debug_robot_pos()
+    g.move(1)
+    g.debug_robot_pos()
+    g.move(2)
+    g.debug_robot_pos()
+    g.move(2)
+    g.debug_robot_pos()
+    g.move(3)
+    g.debug_robot_pos()
