@@ -148,7 +148,6 @@ class Mdp():
             for action in allowed:
                 for next_state in range(self.nb_states):
                     values_dict[action] += self.transition_probability(state, action, next_state) * self.values[next_state]
-            print(state, values_dict)
             policy[state] = max(values_dict, key=values_dict.get)
         return policy
 
