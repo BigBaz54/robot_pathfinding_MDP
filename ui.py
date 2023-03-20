@@ -110,8 +110,22 @@ def pathfind(goal_reward, swamp_reward, firecamp_reward):
     for i in range(size[0]):
         for j in range(size[1]):
             if tiles_type[i, j] == 1:
+                if robot_pos is not None:
+                    # replace former robot position by grass
+                    tiles_type[robot_pos] = 0
+                    tiles[robot_pos[0]*size[1]+robot_pos[1]].destroy()
+                    new_but = ctk.CTkButton(master=grid_frame, text='', height=600/size[0], width=600/size[1], corner_radius=0, border_color="black", border_width=1, command=lambda i=i, j=j: switch_type(i, j), image=images[tiles_type[i, j]], fg_color=colors[tiles_type[i, j]], hover_color=hover_colors[tiles_type[i, j]])
+                    tiles[robot_pos[0]*size[1]+robot_pos[1]] = new_but
+                    new_but.grid(row=robot_pos[0],column=robot_pos[1])
                 robot_pos = (i, j)
             elif tiles_type[i, j] == 2:
+                if goal_pos is not None:
+                    # replace former goal position by grass
+                    tiles_type[goal_pos] = 0
+                    tiles[goal_pos[0]*size[1]+goal_pos[1]].destroy()
+                    new_but = ctk.CTkButton(master=grid_frame, text='', height=600/size[0], width=600/size[1], corner_radius=0, border_color="black", border_width=1, command=lambda i=i, j=j: switch_type(i, j), image=images[tiles_type[i, j]], fg_color=colors[tiles_type[i, j]], hover_color=hover_colors[tiles_type[i, j]])
+                    tiles[goal_pos[0]*size[1]+goal_pos[1]] = new_but
+                    new_but.grid(row=goal_pos[0],column=goal_pos[1])
                 goal_pos = (i, j)
             elif tiles_type[i, j] == 3:
                 obstacles_pos.append((i, j))
