@@ -100,9 +100,7 @@ def pathfind(goal_reward, swamp_reward, firecamp_reward):
     global game
     global mdp
     global values
-    global policy 
-    for tile in tiles:
-        tile.configure(state="disabled")
+    global policy
     robot_pos = None
     goal_pos = None
     obstacles_pos = []
@@ -131,6 +129,9 @@ def pathfind(goal_reward, swamp_reward, firecamp_reward):
                 obstacles_pos.append((i, j))
             elif tiles_type[i, j] == 4:
                 firecamp_pos.append((i, j))
+    if robot_pos is None or goal_pos is None:
+        # no robot or goal position
+        return
     game = Game(size, robot_pos, goal_pos, goal_reward, obstacles_pos, swamp_reward, firecamp_pos, firecamp_reward)
     mdp = Mdp(game, gamma)
     mdp.value_iteration()
