@@ -1,0 +1,2 @@
+Si la punition des marécages est très basse, il prend 1 case de marge pour être sûr de pas tomber dedans !
+
