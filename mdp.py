@@ -166,7 +166,7 @@ class Mdp():
         path = [pos]
         while pos != self.game.goal_pos:
             action = self.policy[pos[0] * self.game.size[1] + pos[1]]
-            pos = self.game.likely_next_state(pos, action)
+            pos = self.game.likely_next_pos(pos, action)
             path.append(pos)
         return path
 
@@ -176,3 +176,4 @@ if __name__ == '__main__':
     m.value_iteration()
     print(g.map)
     print(m.policy.reshape(g.size))
+    print(m.get_robot_path())
