@@ -106,6 +106,17 @@ class Game:
         if self.robot_pos == self.goal_pos:
             self.game_won = True
     
+    def likely_next_pos(self, pos, action):
+        # returns the most likely next state without checking for walls
+        if action == 0:
+            return (pos[0] - 1, pos[1])
+        elif action == 1:
+            return (pos[0], pos[1] + 1)
+        elif action == 2:
+            return (pos[0] + 1, pos[1])
+        elif action == 3:
+            return (pos[0], pos[1] - 1)
+
     def get_reward(self, pos):
         return self.map[pos]
     

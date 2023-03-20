@@ -160,6 +160,15 @@ class Mdp():
             delta = self.one_iteration()
             delta_history.append(delta)
         self.policy = self.get_policy()
+    
+    def get_robot_path(self):
+        pos = self.game.robot_pos
+        path = [pos]
+        while pos != self.game.goal_pos:
+            action = self.policy[pos[0] * self.game.size[1] + pos[1]]
+            pos = self.game.likely_next_state(pos, action)
+            path.append(pos)
+        return path
 
 if __name__ == '__main__':
     g = Game((5,5), (4,0), (4,4), 10, [(4,1), (4,2), (4,3), (3,1), (3,2), (3,3)], -5, [(0,4)], 5)
