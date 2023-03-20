@@ -157,7 +157,7 @@ def display_policy():
 
 gamma_label = ctk.CTkLabel(master=settings_frame, text="Gamma : 0.90", font=('Helvetica', 20))
 gamma_label.grid(row=0, column=0, columnspan=2, pady=(10,0))
-slider = ctk.CTkSlider(master=settings_frame, from_=0, to=1, command=update_gamma, number_of_steps=100)
+slider = ctk.CTkSlider(master=settings_frame, from_=0, to=0.99, command=update_gamma, number_of_steps=100)
 slider.grid(row=1, column=0, columnspan=2, pady=(5,0), padx=(20,20))
 
 grid_label = ctk.CTkLabel(master=settings_frame, text="Grid settings", font=('Helvetica', 20))
