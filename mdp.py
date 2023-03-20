@@ -164,7 +164,7 @@ class Mdp():
     def get_robot_path(self):
         pos = self.game.robot_pos
         path = [pos]
-        while pos != self.game.goal_pos:
+        while (pos != self.game.goal_pos) and (len(path) < self.game.size[0] * self.game.size[1]):
             action = self.policy[pos[0] * self.game.size[1] + pos[1]]
             pos = self.game.likely_next_pos(pos, action)
             path.append(pos)

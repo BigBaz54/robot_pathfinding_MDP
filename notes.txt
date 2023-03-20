@@ -1,2 +1,3 @@
-Si la punition des marécages est très basse, il prend 1 case de marge pour être sûr de pas tomber dedans !
+- Si la punition des marécages est très basse, il prend 1 case de marge pour être sûr de pas tomber dedans !
 
+- Plus la taille est grande, plus il faut augmenter gamma pour que la récompenses du goal ne soit pas atténuée par les nombreuses itérations.
