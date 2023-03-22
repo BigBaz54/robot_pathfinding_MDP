@@ -179,7 +179,7 @@ firecamp_reward_entry.grid(row=6, column=0, columnspan=2, pady=(5,0))
 generate_grid_button = ctk.CTkButton(master=settings_frame, width=215, text="Generate grid", command=lambda: generate_grid(int(rows_entry.get()), int(columns_entry.get())))
 generate_grid_button.grid(row=7, column=0, columnspan=2, pady=(5,0))
 
-pathfind_button = ctk.CTkButton(master=settings_frame, width=215, text="Find path !", command=lambda: pathfind(int(goal_reward_entry.get()), int(swamp_reward_entry.get()), int(firecamp_reward_entry.get()) if firecamp_reward_entry.get() != "" else 0))
+pathfind_button = ctk.CTkButton(master=settings_frame, width=215, text="Find path !", command=lambda: pathfind(int(goal_reward_entry.get()) if goal_reward_entry.get() != "" else 10, int(swamp_reward_entry.get()) if swamp_reward_entry.get() != "" else -5, int(firecamp_reward_entry.get()) if firecamp_reward_entry.get() != "" else 0))
 pathfind_button.grid(row=8, column=0, columnspan=2, pady=(5,10))
 
 app.mainloop()
