@@ -2,7 +2,7 @@
 This is a project for the Artificial Intelligence course of TÉLÉCOM Nancy. The goal of the project is to implement a robot that can find the shortest path in a maze using Markov Decision Process.
 
 ## How to run the code
-To run the code, you need to have python 3.6 installed on your computer.
+To run the code, you need to have python 3 installed on your computer.
 You also need to install the following python libraries:
   - numpy
   - random
@@ -36,7 +36,12 @@ The left part is the maze. You can click on the cells to change their state. The
 
 There can be only one starting point and one goal in the maze. The firecamps are optional.
 
+<img src="https://user-images.githubusercontent.com/96493391/231776493-1a777549-cad7-4373-a10d-dfe1b9214a3b.png" width="638" height="373">
+
+
 Once you have created the maze, you can click on the "Find path !" button to solve the maze.
+
+<img src="https://user-images.githubusercontent.com/96493391/231776547-ef2da3f1-af47-4f8e-899a-8f632352ecc8.png" width="373" height="373">
 
 ## How to read the results
 
