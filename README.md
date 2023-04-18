@@ -5,7 +5,6 @@ This is a project for the Artificial Intelligence course of TÉLÉCOM Nancy. The
 To run the code, you need to have python 3 installed on your computer.
 You also need to install the following python libraries:
   - numpy
-  - random
   - tkinter
   - customtkinter
   - Pillow
