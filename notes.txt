@@ -2,4 +2,4 @@
 
 - Plus la taille est grande, plus il faut augmenter gamma pour que la récompenses du goal ne soit pas atténuée par les nombreuses itérations.
 
-- L'exemple du sujet fonctionne avec gamma dans [0.48, 0.69]
+- L'exemple du sujet fonctionne avec gamma dans [0.37, 0.42]
