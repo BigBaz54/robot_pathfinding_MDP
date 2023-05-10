@@ -171,9 +171,9 @@ class Mdp():
         return path
 
 if __name__ == '__main__':
-    g = Game((5,5), (4,0), (4,4), 10, [(4,1), (4,2), (4,3), (3,1), (3,2), (3,3)], -5, [(0,4)], 5)
-    m = Mdp(g, gamma=0.9, epsilon=0.01)
+    g = Game((6,6), (0,0), (1,3), 15, [(0,3), (1,2), (2,1)], -20, [(4,2)], 6)
+    m = Mdp(g, gamma=0.66, epsilon=0.01)
     m.value_iteration()
     print(g.map)
-    print(m.policy.reshape(g.size))
-    print(m.get_robot_path())
+    print("Policy:", m.policy.reshape(g.size))
+    print("Path:", m.get_robot_path())
